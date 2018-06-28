@@ -1,4 +1,4 @@
-function addBorder(picture: string[]): string[] {
+export function addBorder(picture: string[]): string[] {
   const sizeofWall = picture[0].length + 2;
   const wall = "*".repeat(sizeofWall);
 
@@ -11,5 +11,3 @@ function addBorder(picture: string[]): string[] {
 
   return withWall;
 }
-
-console.log(addBorder(["abc", "ded"]));
