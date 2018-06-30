@@ -1,13 +1,12 @@
-function adjacentElementsProduct(inputArray: number[]): number {
-    let largestProduct = inputArray[0] * inputArray[1];
+export function adjacentElementsProduct(inputArray: number[]): number {
+  let maxNumber = inputArray[0] * inputArray[1];
 
-    for (let i = 1; i < inputArray.length - 1; i++) {
-        const product = inputArray[i] * inputArray[i + 1];
-        
-        largestProduct = largestProduct < product ? product : largestProduct;
+  for (let i = 1; i < inputArray.length - 1; i++) {
+    const product = inputArray[i] * inputArray[i + 1];
+    if (product > maxNumber) {
+      maxNumber = product;
     }
+  }
 
-    return largestProduct;
+  return maxNumber;
 }
-
-console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3]));
