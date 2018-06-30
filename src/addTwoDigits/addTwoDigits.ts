@@ -1,5 +1,8 @@
-function addTwoDigits(n: any): number {
-
+export function addTwoDigits(n: any): number {
+  return n
+    .toString()
+    .split("")
+    .reduce((x: any, y: any) => {
+      return x + parseInt(y);
+    }, 0);
 }
-
-// console.log(addTwoDigits(29));
