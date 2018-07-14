@@ -1,4 +1,4 @@
-function alphabeticShift(inputString: string): string {
+export function alphabeticShift(inputString: string): string {
   const alphabet: { [atr: string]: string } = {
     a: "b",
     b: "c",
@@ -32,7 +32,5 @@ function alphabeticShift(inputString: string): string {
     .map((str: string) => {
       return alphabet[str];
     })
-    .join();
+    .join("");
 }
-
-console.log(alphabeticShift("crazy"));
