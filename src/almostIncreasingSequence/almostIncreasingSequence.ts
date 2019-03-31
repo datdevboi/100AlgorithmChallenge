@@ -1,19 +1,15 @@
-function almostIncreasingSequence(sequence: number[]): boolean {
+export function almostIncreasingSequence(sequence: any[]): boolean {
   let count = 0;
-
-  for (var i = 0; i < sequence.length - 1; i++) {
-    if (sequence[i] <= sequence[i - 1]) {
+  sequence.reduce((prev, current) => {
+    if (current < prev) {
       count++;
-      if (
-        sequence[i] <= sequence[i - 2] &&
-        sequence[i + 1] <= sequence[i - 1]
-      ) {
-        return false;
-      }
+      return prev;
     }
-  }
 
-  return count <= 1;
+    return current;
+  });
+
+  return count > 1 ? false : true;
 }
 
 // console.log(almostIncreasingSequence([1, 3, 2, 1]))
